@@ -51,6 +51,7 @@ def k3FuzzyAvoidEval(avoid_sym, val_left, val_front, val_right):
     # print('vl=',avoid_sym.output['vl'], ' vr=',avoid_sym.output['vr'])
     return avoid_sym
 
+#LOOOOOOL
 
 def k3FuzzyAvoidLoop(s):
     avoid_sym = khep.k3FuzzyAvoidDef() # do przygotowania w II części laboratorium
