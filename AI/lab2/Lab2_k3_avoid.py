@@ -57,14 +57,14 @@ def k3FuzzyAvoidLoop(s):
     res = False
     iter = 0
     while iter <= 1000:
-    sens = khep.k3ReadProximitySensors(s)
-    # print(sens)
-    val_left = max(sens[1],sens[2])
-    val_front = max(sens[3],sens[4])
-    val_right = max(sens[5],sens[6])
-    avoid_sym = k3FuzzyAvoidEval(avoid_sym, val_left, val_front, val_right)
-    khep.k3SetSpeed(s,avoid_sym.output['vl'],avoid_sym.output['vr'])
-    iter += 1
+        sens = khep.k3ReadProximitySensors(s)
+        print(sens)
+        val_left = max(sens[1],sens[2])
+        val_front = max(sens[3],sens[4])
+        val_right = max(sens[5],sens[6])
+        avoid_sym = k3FuzzyAvoidEval(avoid_sym, val_left, val_front, val_right)
+        khep.k3SetSpeed(s,avoid_sym.output['vl'],avoid_sym.output['vr'])
+        iter += 1
     
     
-k3FuzzyAvoidLoop(5)
+k3FuzzyAvoidLoop()

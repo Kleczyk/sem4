@@ -32,22 +32,22 @@ def k3ReadProximitySensors(s):
         res = True
         # # some sensors need correction
         # # 1 - min val = 340, 4 - min val = 110, 7 - min val = 220 and 8 - min val = 120
-        ProximitySensors[1] = (ProximitySensors[1]-2000)*(MaxProximitiSignal-0)/(MaxProximitiSignal2000)+0
-        ProximitySensors[4] = (ProximitySensors[4]-1100)*(MaxProximitiSignal-0)/(MaxProximitiSignal1100)+0
+        ProximitySensors[1] = (ProximitySensors[1]-2000)*(MaxProximitiSignal-0)/(MaxProximitiSignal-2000)+0
+        ProximitySensors[4] = (ProximitySensors[4]-1100)*(MaxProximitiSignal-0)/(MaxProximitiSignal-1100)+0
         ProximitySensors[7] = (ProximitySensors[7]-100)*(MaxProximitiSignal-0)/(MaxProximitiSignal-100)+0
-        ProximitySensors[8] = (ProximitySensors[8]-1000)*(MaxProximitiSignal-0)/(MaxProximitiSignal1000)+0
+        ProximitySensors[8] = (ProximitySensors[8]-1000)*(MaxProximitiSignal-0)/(MaxProximitiSignal-1000)+0
  return ProximitySensors
 def k3ReadAmbientSensors(s):
  res = False
  while not res:
- s.write(b'O\r')
- serialString = s.readline()
- _ = s.read(1) #necessary to empty serial port
- serialString = serialString.decode("Ascii")
- serialString = serialString.strip() #remove the newline character from a string
- ambSens = serialString.split(",") #splits a string into a list
- AmbientSensors = ambSens[1:-1] #remove first and last element
- AmbientSensors = np.array(list(map(int, AmbientSensors))) #convert string list to int list
+   s.write(b'O\r')
+   serialString = s.readline()
+   _ = s.read(1) #necessary to empty serial port
+   serialString = serialString.decode("Ascii")
+   serialString = serialString.strip() #remove the newline character from a string
+   ambSens = serialString.split(",") #splits a string into a list
+   AmbientSensors = ambSens[1:-1] #remove first and last element
+   AmbientSensors = np.array(list(map(int, AmbientSensors))) #convert string list to int list
  if len(AmbientSensors)==11:
      res = True
  return AmbientSensors
