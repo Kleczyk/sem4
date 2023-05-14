@@ -1,5 +1,6 @@
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
+import simpful as sf
 import numpy as np
 import khepera3 as khep
 
@@ -12,24 +13,20 @@ def k3FuzzyAvoidDef():
     vl = ctrl.Consequent(np.arange(0,MaxSpeed,1), 'v1')
     vr = ctrl.Consequent(np.arange(0,MaxSpeed,1), 'v2')
     
+    left['B'] = fuzz.trimf(left.universe, [0, 0, MaxProximitiSignal])
+    left['S'] = fuzz.trimf(left.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
 
+    front['B'] =fuzz.trimf(front.universe, [0, 0, MaxProximitiSignal])
+    front['S'] =fuzz.trimf(front.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
 
-    left['S'] = fuzz.trimf(left.universe, [0, 0, MaxProximitiSignal])
-    left['B'] = fuzz.trimf(left.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
+    right['B'] =fuzz.trimf(right.universe, [0, 0, MaxProximitiSignal])
+    right['S'] =fuzz.trimf(right.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
 
-    front['S'] =fuzz.trimf(left.universe, [0, 0, MaxProximitiSignal])
-    front['B'] =fuzz.trimf(left.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
+    vl['back'] = fuzz.trimf(vl.universe, [-MaxSpeed, -MaxSpeed, 0])
+    vl['front'] = fuzz.trimf(vl.universe, [0,MaxSpeed, MaxSpeed])
 
-    right['S'] =fuzz.trimf(left.universe, [0, 0, MaxProximitiSignal])
-    right['B'] =fuzz.trimf(left.universe, [0, MaxProximitiSignal, MaxProximitiSignal])
-
-    vl['back'] = fuzz.trimf(left.universe, [-MaxSpeed, -MaxSpeed, 0])
-    vl['front'] = fuzz.trimf(left.universe, [0,MaxSpeed, MaxSpeed])
-
-    vr['back'] = fuzz.trimf(left.universe, [-MaxSpeed, -MaxSpeed, 0])
-    vr['front'] = fuzz.trimf(left.universe, [0,MaxSpeed, MaxSpeed])
-    left.view()
-    vl.view()
+    vr['back'] = fuzz.trimf(vr.universe, [-MaxSpeed, -MaxSpeed, 0])
+    vr['front'] = fuzz.trimf(vr.universe, [0,MaxSpeed, MaxSpeed])
 
     # rules definition
     # Rule in a fuzzy control system, connecting antecedent(s) to consequent(s)
@@ -41,6 +38,30 @@ def k3FuzzyAvoidDef():
     rule6 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['S']),consequent=(vl['front'], vr['back']) )
     rule7 =ctrl.Rule(antecedent=(left['B'] & front['S'] & right['B']),consequent=(vl['front'], vr['front']) )
     rule8 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['B']),consequent=(vl['back'], vr['front']) )
+    
+    
+    #wersja z podążenim w strone światła
+    
+    # rule1 =ctrl.Rule(antecedent=(left['S'] & front['S'] & right['S']),consequent=(vl['front'], vr['front']) )  
+    # rule2 =ctrl.Rule(antecedent=(left['S'] & front['S'] & right['B']),consequent=(vl['front'], vr['back']) )   
+    # rule3 =ctrl.Rule(antecedent=(left['S'] & front['B'] & right['S']),consequent=(vl['front'], vr['front']) )  
+    # rule4 =ctrl.Rule(antecedent=(left['S'] & front['B'] & right['B']),consequent=(vl['front'], vr['back']) )   
+    # rule5 =ctrl.Rule(antecedent=(left['B'] & front['S'] & right['S']),consequent=(vl['back'], vr['front']) )   
+    # rule6 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['S']),consequent=(vl['back'], vr['front']) )   
+    # rule7 =ctrl.Rule(antecedent=(left['B'] & front['S'] & right['B']),consequent=(vl['front'], vr['back']) )   
+    # rule8 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['B']),consequent=(vl['front'], vr['front']) ) 
+    
+    
+    rule1 =ctrl.Rule(antecedent=(left['S'] & front['S'] & right['S']),consequent=(vl['front'],  vr['front']) )  
+    rule2 =ctrl.Rule(antecedent=(left['S'] & front['S'] & right['B']),consequent=(vl['front'],  vr['back']) )   
+    rule3 =ctrl.Rule(antecedent=(left['S'] & front['B'] & right['S']),consequent=(vl['front'],  vr['front']) )  
+    rule4 =ctrl.Rule(antecedent=(left['S'] & front['B'] & right['B']),consequent=(vl['front'],  vr['back']) )   
+    rule5 =ctrl.Rule(antecedent=(left['B'] & front['S'] & right['S']),consequent=(vl['back'],   vr['front']) )   
+    rule6 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['S']),consequent=(vl['back'],   vr['front']) )   
+    rule7 =ctrl.Rule(antecedent=(left['B'] & front['S'] & right['B']),consequent=(vl['front'],  vr['back']) )   
+    rule8 =ctrl.Rule(antecedent=(left['B'] & front['B'] & right['B']),consequent=(vl['front'],  vr['front']) )  
+    
+
     
 def k3FuzzyAvoidEval(avoid_sym, val_left, val_front, val_right):
     # Compute the fuzzy system
@@ -58,7 +79,7 @@ def k3FuzzyAvoidLoop(s):
     res = False
     iter = 0
     while iter <= 1000:
-        sens = khep.k3ReadProximitySensors(s)
+        sens = khep.k3ReadAmbientSensors(s) 
         print(sens)
         val_left = max(sens[1],sens[2])
         val_front = max(sens[3],sens[4])

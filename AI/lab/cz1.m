@@ -10,10 +10,10 @@ fis = addMF(fis,'obsluga','gaussmf',[1.5 10],'Name','wspaniala');
 fis = addMF(fis,'jedzenie','trapmf',[-2 0 1 3],'Name','zepsute');
 fis = addMF(fis,'jedzenie','trapmf',[7 9 10 12],'Name','wyborne');
 
-fis = addOutput(fis,[0 30],'Name','napiwek');
-fis = addMF(fis,'napiwek','trimf',[0 5 10],'Name','maly');
+fis = addOutput(fis,[-10 40],'Name','napiwek');
+fis = addMF(fis,'napiwek','trimf',[-10 0 10],'Name','maly');
 fis = addMF(fis,'napiwek','trimf',[10 15 20],'Name','sredni');
-fis = addMF(fis,'napiwek','trimf',[20 25 30],'Name','duzy');
+fis = addMF(fis,'napiwek','trimf',[ 20 , 30 ,40 ],'Name','duzy');
 
 rule1 = "if obsluga is slaba then napiwek is maly";
 rule2 = "if obsluga is dobra then napiwek is sredni";
@@ -51,4 +51,4 @@ jedzenie_val = 10;
 
 input_vals = [obsluga_val, jedzenie_val];
 napiwek_val = evalfis(input_vals, fis);
-disp(['Wartość napiwku Max: ', num2str(napiwek_val)]);
+disp(['Wartiwku ość napMax: ', num2str(napiwek_val)]);

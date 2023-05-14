@@ -1,0 +1,6 @@
+﻿  GL_Temlate_2019.c
+D:\prz\sem4\grafika\lab1\lab1\GL_Temlate_2019.c(342,30): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\prz\sem4\grafika\lab1\lab1\GL_Temlate_2019.c(630,12): warning C4244: "return": konwersja z "WPARAM" do "int", możliwa utrata danych
+D:\prz\sem4\grafika\lab1\lab1\GL_Temlate_2019.c(799,26): warning C4244: "=": konwersja z "int" do "GLfloat", możliwa utrata danych
+D:\prz\sem4\grafika\lab1\lab1\GL_Temlate_2019.c(800,26): warning C4244: "=": konwersja z "int" do "GLfloat", możliwa utrata danych
+  lab1.vcxproj -> D:\prz\sem4\grafika\lab1\x64\Debug\lab1.exe
