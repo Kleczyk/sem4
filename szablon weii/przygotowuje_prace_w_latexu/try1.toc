@@ -1,0 +1,22 @@
+\babel@toc {polish}{}\relax 
+\contentsline {section}{Wprowadzanie}{\footnotesize 3}{}%
+\contentsline {section}{\numberline {1}Model pojedynczego neuronu}{\footnotesize 4}{}%
+\contentsline {subsection}{\numberline {1.1}Ćwiczenie I}{\footnotesize 4}{}%
+\contentsline {subsection}{\numberline {1.2}Ćwiczenie II}{\footnotesize 5}{}%
+\contentsline {subsection}{\numberline {1.3}Ćwiczenie III}{\footnotesize 7}{}%
+\contentsline {subsection}{\numberline {1.4}Ćwiczenie IV}{\footnotesize 7}{}%
+\contentsline {section}{\numberline {2}Tekst zasadniczy -- I}{\footnotesize 9}{}%
+\contentsline {subsection}{\numberline {2.1}Formatowanie rozdziałów i podrozdziałów}{\footnotesize 9}{}%
+\contentsline {section}{\numberline {3}Tekst zasadniczy -- II}{\footnotesize 10}{}%
+\contentsline {subsection}{\numberline {3.1}Formatowanie tekstu. Należy pamiętać, że na końcu tytułu rozdziału, podrozdziału i zakresu nie umieszcza się kropki}{\footnotesize 10}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Marginesy i akapity}{\footnotesize 10}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Zalecenia co do sposobu pisania jednostek i symboli wielkości fizycznych}{\footnotesize 11}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Rysunki i tabele}{\footnotesize 13}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Wzory matematyczne}{\footnotesize 14}{}%
+\contentsline {subsubsection}{\numberline {3.1.5}Listingi programów}{\footnotesize 16}{}%
+\contentsline {subsubsection}{\numberline {3.1.6}Numerowanie i punktowanie}{\footnotesize 16}{}%
+\contentsline {subsection}{\numberline {3.2}Wykaz literatury}{\footnotesize 17}{}%
+\contentsline {subsection}{\numberline {3.3}Wydruk pracy}{\footnotesize 17}{}%
+\contentsline {section}{\numberline {4}Podsumowanie i wnioski końcowe}{\footnotesize 19}{}%
+\contentsline {section}{Załączniki}{\footnotesize 20}{}%
+\contentsline {section}{Literatura}{\footnotesize 21}{}%

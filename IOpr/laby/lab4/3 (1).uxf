@@ -1,0 +1,31 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>12</y><w>504</w><h>180</h></coordinates><panel_attributes>Wypożyczalnia 
+--
+-nazwa: string
+-bilansfinasowy: long
+--
++otwarcie()
++zamkniecie()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>588</x><y>372</y><w>480</w><h>132</h></coordinates><panel_attributes>     Pracownik   
+--
+-idPracownika: int 
+-imię: string      
+-nazwisko: string 
+--
++zweryfikujKlienta(klient: Klient): bool 
++potwierdźWypożyczenie(klient: Klient, samochód: Samochód): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>48</x><y>372</y><w>372</w><h>144</h></coordinates><panel_attributes>     Klient      
+--
+-idKlienta: int 
+-imię: string   
+-nazwisko: string
+--
++wypożyczSamochód(samochód: Samochód): bool
++oddajSamochód(samochód: Samochód): bool   </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>720</y><w>228</w><h>192</h></coordinates><panel_attributes>   Samochód    
+--
+   Samochód    
+--
+-nrRejestracyjny: string
+-marka: string          
+-model: string 
+-zarezerwowany: bool        
+--
++zarezerwuj()  
++anulujRezerwację()   </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>492</y><w>216</w><h>360</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>160;10;10;280</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>504</y><w>192</w><h>360</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;140;280</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>444</y><w>204</w><h>36</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>150;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>180</y><w>84</w><h>216</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;160</additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>180</y><w>156</w><h>216</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;160</additional_attributes></element></diagram>

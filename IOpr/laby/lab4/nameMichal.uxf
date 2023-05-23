@@ -1,0 +1,63 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>266</x><y>368</y><w>133</w><h>84</h></coordinates><panel_attributes>world
++ pub, #, prot, -priv
+--
+-age:long
+--
+-exist() : bool
+-start()
+-end()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>427</x><y>277</y><w>133</w><h>84</h></coordinates><panel_attributes>human
+--
++eat(food f) : bool
++mind() : bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>427</x><y>445</y><w>133</w><h>35</h></coordinates><panel_attributes>hearth
+--
+-weight : float()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>483</x><y>354</y><w>21</w><h>105</h></coordinates><panel_attributes>lt=-(+)</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>46</y><w>133</w><h>42</h></coordinates><panel_attributes>&lt;&lt;Interface &gt;&gt;
+IIcreature
+--
++eat(food f) : bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>151</y><w>133</w><h>49</h></coordinates><panel_attributes>animal
+--
+-age : int
+--
++eat(food f) : bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>81</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>95</y><w>133</w><h>42</h></coordinates><panel_attributes>food
+--
+-name : string
++quantity : float
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>119</x><y>242</y><w>133</w><h>42</h></coordinates><panel_attributes>dog
+--
++eat(food f) : bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>182</x><y>193</y><w>119</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>193</y><w>168</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;220;120</additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>312</y><w>105</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;80;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>182</x><y>277</y><w>154</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>200;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>60</y><w>77</w><h>49</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>203</x><y>529</y><w>133</w><h>84</h></coordinates><panel_attributes>film
+--
+id_filmu : int
+tytul : varchar
+rezyser  : varchar
+czas : int
+rokprodukcji : int
+gatunek : varchar
+opis : text
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>203</x><y>641</y><w>133</w><h>84</h></coordinates><panel_attributes>seans
+--
+id_seans : int
+dzientyg : int
+godzina : int
+sala_numer : int
+film_id : int
+wolnemiejsca : int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>112</x><y>662</y><w>63</w><h>42</h></coordinates><panel_attributes>sala
+--
+numer : int
+miejsca : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>357</x><y>662</y><w>84</w><h>42</h></coordinates><panel_attributes>tydzien
+--
+id_tydzien : int
+nazwa : varchar</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>767</y><w>133</w><h>84</h></coordinates><panel_attributes>rezerwacje
+--
+id_rezerwacji : int
+liczbamiejsc : int
+seans_id : int
+klient_id : int
+akceptacja : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>63</x><y>774</y><w>91</w><h>63</h></coordinates><panel_attributes>klient
+--
+id_klient : int
+login : varchar
+haslo : varchar</panel_attributes><additional_attributes></additional_attributes></element></diagram>
